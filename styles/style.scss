@@ -1,0 +1,40 @@
+/*Color set*/
+$green:#24a07c;
+$red:#e10500;
+$grey:#999;
+$orange:#ff7800;
+$black:#666;
+
+ul{
+    list-style-type: none;
+}
+table{
+    width: 100%;
+    th,td{
+        width:12.5%;
+        text-align: center;
+        }
+    th{
+        background-color: deepskyblue;
+    }
+    td{
+        background-color: rgb(126, 228, 126);
+    }
+}
+
+.days-up{
+    font-weight: 900;
+    &::after{
+        content: " 起";
+        font-size: 0.8rem;
+        color:$black;
+    }
+}
+.price-toggle-container{
+width: 100%; 
+text-align: right;
+}
+#price-toggle{
+    text-align: right;
+    background-color: rgb(248, 175, 175);
+}
