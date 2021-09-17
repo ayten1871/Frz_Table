@@ -15,14 +15,19 @@ table th, table td {
   text-align: center;
   height: auto;
   border: 1px #dad8d8 solid;
-  padding: 0.8rem 0.5rem;
 }
 
 table th {
   background-color: #eeecec;
   color: #3d3b3b;
+  padding: 0.8rem 0.5rem;
 }
 
+table td {
+  padding: 0;
+}
+
+/*跨年分*/
 .contain-year-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,7 +36,6 @@ table th {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #e4e9a4;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,7 +49,6 @@ table th {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #dba4e9;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -55,6 +58,40 @@ table th {
   color: #24a07c;
 }
 
+/*最低價*/
+.contain-cheapest-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contain-cheapest-container .contain-cheapest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contain-cheapest-container .contain-cheapest .cheapest-trangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.5rem 1.5rem 0 0;
+  border-color: #ff7800 transparent transparent transparent;
+}
+
+/*去程回程*/
 .ticket-type {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,6 +128,7 @@ table th {
           justify-content: start;
 }
 
+/*價格*/
 .days-up {
   font-weight: 900;
   color: #3d3b3b;
@@ -103,10 +141,12 @@ table th {
   color: #666;
 }
 
+/*查看*/
 .search {
   color: #666;
 }
 
+/*低價月曆*/
 .price-toggle-container {
   width: 100%;
   text-align: right;

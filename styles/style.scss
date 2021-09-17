@@ -25,35 +25,52 @@ table{
         text-align: center;
         height: auto;
         border:1px $grey solid;
-        padding: 0.8rem 0.5rem;
+        // padding: 0.8rem 0.5rem;
         }
     th{
         background-color: $light;
         color: $dark;
+        padding: 0.8rem 0.5rem;
     }
 
     td{
-        // background-color: rgb(126, 228, 126);
+        padding: 0;
     }
 }
+/*跨年分*/
 .contain-year-container{
+
     @include flexContainers(column);
-    background-color: rgb(228, 233, 164);
     align-items: center;
+    
     .contain-year{
         @include flexContainers(column);
-        background-color: rgb(219, 164, 233);
         align-items: flex-end;
         .year{
             color:$green;
         }
-
+    }
+}
+/*最低價*/
+.contain-cheapest-container{
+    @include flexContainers(column);
+    .contain-cheapest{
+        @include flexContainers(column);
+        align-items: flex-start;
+        .cheapest-trangle{
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 1.5rem 1.5rem 0 0;
+            border-color: $orange transparent transparent transparent;
+        }
     }
 
 }
+/*去程回程*/
 .ticket-type{
     @include flexContainers(column);
-    // background-color: rgb(204, 0, 255);
     .ticket-type-arrive{
         @include flexContainers(rows);
         justify-content: end;
@@ -63,6 +80,7 @@ table{
         justify-content: start;
     }
 }
+/*價格*/
 .days-up{
     font-weight: 900;
     color: $dark;
@@ -73,9 +91,11 @@ table{
         color:$black;
     }
 }
+/*查看*/
 .search{
     color: $black;
 }
+/*低價月曆*/
 .price-toggle-container{
 width: 100%; 
 text-align: right;
