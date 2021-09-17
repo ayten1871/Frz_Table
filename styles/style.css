@@ -5,29 +5,105 @@ ul {
 }
 
 table {
+  border-spacing: 0;
+  border: 1px #eeecec solid;
   width: 100%;
 }
 
 table th, table td {
   width: 12.5%;
   text-align: center;
+  height: auto;
+  border: 1px #dad8d8 solid;
+  padding: 0.8rem 0.5rem;
 }
 
 table th {
-  background-color: deepskyblue;
+  background-color: #eeecec;
+  color: #3d3b3b;
 }
 
-table td {
-  background-color: #7ee47e;
+.contain-year-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #e4e9a4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contain-year-container .contain-year {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #dba4e9;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.contain-year-container .contain-year .year {
+  color: #24a07c;
+}
+
+.ticket-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ticket-type .ticket-type-arrive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: rows;
+          flex-direction: rows;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.ticket-type .ticket-type-departure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: rows;
+          flex-direction: rows;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 .days-up {
   font-weight: 900;
+  color: #3d3b3b;
 }
 
 .days-up::after {
+  font-weight: 900;
   content: " 起";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.search {
   color: #666;
 }
 
@@ -38,6 +114,24 @@ table td {
 
 #price-toggle {
   text-align: right;
-  background-color: #f8afaf;
+  background-color: #eeecec;
+  color: #008cff;
+  border-bottom: 2px solid white;
+}
+
+#price-toggle::before {
+  content: "";
+  background-image: url("../img/calendar.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-position-y: 5px;
+}
+
+.selected {
+  border: 1px solid #ff7800;
+  background-color: rgba(255, 166, 0, 0.1);
 }
 /*# sourceMappingURL=style.css.map */

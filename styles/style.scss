@@ -1,34 +1,80 @@
 /*Color set*/
 $green:#24a07c;
 $red:#e10500;
-$grey:#999;
+$grey:rgb(218, 216, 216);
+$light:#eeecec;
 $orange:#ff7800;
 $black:#666;
+$dark:rgb(61, 59, 59);
+$blue:rgb(0, 140, 255);
+
+@mixin  flexContainers($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
 
 ul{
     list-style-type: none;
 }
 table{
+    border-spacing: 0;
+    border:1px $light solid;
     width: 100%;
     th,td{
         width:12.5%;
         text-align: center;
+        height: auto;
+        border:1px $grey solid;
+        padding: 0.8rem 0.5rem;
         }
     th{
-        background-color: deepskyblue;
+        background-color: $light;
+        color: $dark;
     }
+
     td{
-        background-color: rgb(126, 228, 126);
+        // background-color: rgb(126, 228, 126);
     }
 }
+.contain-year-container{
+    @include flexContainers(column);
+    background-color: rgb(228, 233, 164);
+    align-items: center;
+    .contain-year{
+        @include flexContainers(column);
+        background-color: rgb(219, 164, 233);
+        align-items: flex-end;
+        .year{
+            color:$green;
+        }
 
+    }
+
+}
+.ticket-type{
+    @include flexContainers(column);
+    // background-color: rgb(204, 0, 255);
+    .ticket-type-arrive{
+        @include flexContainers(rows);
+        justify-content: end;
+    }
+    .ticket-type-departure{
+        @include flexContainers(rows);
+        justify-content: start;
+    }
+}
 .days-up{
     font-weight: 900;
+    color: $dark;
     &::after{
+        font-weight: 900;
         content: " 起";
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color:$black;
     }
+}
+.search{
+    color: $black;
 }
 .price-toggle-container{
 width: 100%; 
@@ -36,5 +82,23 @@ text-align: right;
 }
 #price-toggle{
     text-align: right;
-    background-color: rgb(248, 175, 175);
+    background-color:$light;
+    color: $blue;
+    border-bottom: 2px solid white;
+    &::before{
+        content: "";
+        background-image: url("../img/calendar.png");
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 25px; 
+        height: 25px;
+        background-position-y: 5px;
+
+    }
+}
+.selected{
+    border:1px solid $orange;
+    background-color: rgba(255, 166, 0,0.1);
+    
 }
