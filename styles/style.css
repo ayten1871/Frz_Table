@@ -10,7 +10,8 @@ table {
   width: 100%;
 }
 
-table th, table td {
+table th,
+table td {
   width: 12.5%;
   text-align: center;
   height: auto;
@@ -67,6 +68,9 @@ table td {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contain-cheapest-container .contain-cheapest {
@@ -87,7 +91,7 @@ table td {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 1.5rem 1.5rem 0 0;
+  border-width: 1.7rem 1.7rem 0 0;
   border-color: #ff7800 transparent transparent transparent;
 }
 
@@ -130,13 +134,15 @@ table td {
 
 /*價格*/
 .days-up {
+  letter-spacing: 1px;
+  word-spacing: 5px;
   font-weight: 900;
   color: #3d3b3b;
 }
 
 .days-up::after {
   font-weight: 900;
-  content: " 起";
+  content: ' 起';
   font-size: 0.9rem;
   color: #666;
 }
@@ -149,7 +155,7 @@ table td {
 /*低價月曆*/
 .price-toggle-container {
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
 #price-toggle {
@@ -160,7 +166,7 @@ table td {
 }
 
 #price-toggle::before {
-  content: "";
+  content: '';
   background-image: url("../img/calendar.png");
   background-size: 25px 25px;
   background-repeat: no-repeat;
@@ -170,8 +176,40 @@ table td {
   background-position-y: 5px;
 }
 
+#price-toggle::after {
+  content: '▲';
+}
+
 .selected {
   border: 1px solid #ff7800;
   background-color: rgba(255, 166, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .table-container {
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding: 0;
+    /*待計算*/
+  }
+  table {
+    table-layout: auto;
+    width: 200%;
+    /*待計算 */
+  }
+  table th,
+  table td {
+    overflow: hidden;
+  }
+  table .first-col {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: auto;
+    border-top-width: 1px;
+    /*only relevant for first row*/
+    margin-top: -1px;
+    /*compensate for top border*/
+  }
 }
 /*# sourceMappingURL=style.css.map */

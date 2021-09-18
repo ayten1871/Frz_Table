@@ -1,124 +1,157 @@
 /*Color set*/
-$green:#24a07c;
-$red:#e10500;
-$grey:rgb(218, 216, 216);
-$light:#eeecec;
-$orange:#ff7800;
-$black:#666;
-$dark:rgb(61, 59, 59);
-$blue:rgb(0, 140, 255);
+$green: #24a07c;
+$red: rgb(225, 5, 0);
+$grey: rgb(218, 216, 216);
+$light: #eeecec;
+$orange: #ff7800;
+$black: #666;
+$dark: rgb(61, 59, 59);
+$blue: rgb(0, 140, 255);
 
-@mixin  flexContainers($direction) {
+@mixin flexContainers($direction) {
     display: flex;
     flex-direction: $direction;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
-table{
+table {
     border-spacing: 0;
-    border:1px $light solid;
+    border: 1px $light solid;
     width: 100%;
-    th,td{
-        width:12.5%;
+    th,
+    td {
+        width: 12.5%;
         text-align: center;
         height: auto;
-        border:1px $grey solid;
+        border: 1px $grey solid;
         // padding: 0.8rem 0.5rem;
-        }
-    th{
+    }
+    th {
         background-color: $light;
         color: $dark;
         padding: 0.8rem 0.5rem;
     }
 
-    td{
+    td {
         padding: 0;
     }
 }
 /*跨年分*/
-.contain-year-container{
-
+.contain-year-container {
     @include flexContainers(column);
     align-items: center;
-    
-    .contain-year{
+
+    .contain-year {
         @include flexContainers(column);
         align-items: flex-end;
-        .year{
-            color:$green;
+        .year {
+            color: $green;
         }
     }
 }
 /*最低價*/
-.contain-cheapest-container{
+.contain-cheapest-container {
     @include flexContainers(column);
-    .contain-cheapest{
+    // align-items: flex-start;
+    justify-content: space-between;
+    .contain-cheapest {
         @include flexContainers(column);
         align-items: flex-start;
-        .cheapest-trangle{
+        .cheapest-trangle {
             display: inline-block;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 1.5rem 1.5rem 0 0;
+            border-width: 1.7rem 1.7rem 0 0;
             border-color: $orange transparent transparent transparent;
         }
     }
-
 }
 /*去程回程*/
-.ticket-type{
+.ticket-type {
     @include flexContainers(column);
-    .ticket-type-arrive{
+    .ticket-type-arrive {
         @include flexContainers(rows);
         justify-content: end;
     }
-    .ticket-type-departure{
+    .ticket-type-departure {
         @include flexContainers(rows);
         justify-content: start;
     }
 }
 /*價格*/
-.days-up{
+.days-up {
+    letter-spacing: 1px;
+    word-spacing: 5px;
     font-weight: 900;
     color: $dark;
-    &::after{
+    &::after {
         font-weight: 900;
-        content: " 起";
+        content: ' 起';
         font-size: 0.9rem;
-        color:$black;
+        color: $black;
     }
 }
 /*查看*/
-.search{
+.search {
     color: $black;
 }
 /*低價月曆*/
-.price-toggle-container{
-width: 100%; 
-text-align: right;
+.price-toggle-container {
+    width: 100%;
+    text-align: center;
 }
-#price-toggle{
+#price-toggle {
     text-align: right;
-    background-color:$light;
+    background-color: $light;
     color: $blue;
     border-bottom: 2px solid white;
-    &::before{
-        content: "";
-        background-image: url("../img/calendar.png");
+    &::before {
+        content: '';
+        background-image: url('../img/calendar.png');
         background-size: 25px 25px;
         background-repeat: no-repeat;
         display: inline-block;
-        width: 25px; 
+        width: 25px;
         height: 25px;
         background-position-y: 5px;
-
+    }
+    &::after {
+        content: '▲';
     }
 }
-.selected{
-    border:1px solid $orange;
-    background-color: rgba(255, 166, 0,0.1);
-    
+.selected {
+    border: 1px solid $orange;
+    background-color: rgba(255, 166, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .table-container {
+        // width: 325px; /*待計算 */
+        overflow-x: scroll;
+        overflow-y: visible;
+        padding: 0; /*待計算*/
+    }
+    table {
+        // position: relative;
+        table-layout: auto;
+        width: 200%; /*待計算 */
+
+        th,
+        td {
+            overflow: hidden;
+        }
+        .first-col {
+            position: sticky;
+            // width: 5rem;
+            left: 0;
+            top: auto;
+            border-top-width: 1px;
+            /*only relevant for first row*/
+            margin-top: -1px;
+            /*compensate for top border*/
+        }
+    }
 }
