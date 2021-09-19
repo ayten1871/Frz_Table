@@ -39,6 +39,12 @@ table {
     }
 }
 /*跨年分*/
+.remove-padding {
+    padding: 0 0.5rem;
+}
+.fix-padding {
+    padding: 0.3rem 0.5rem;
+}
 .contain-year-container {
     @include flexContainers(column);
     align-items: center;
@@ -47,7 +53,9 @@ table {
         @include flexContainers(column);
         align-items: flex-end;
         .year {
+            font-weight: 700;
             color: $green;
+            font-size: 0.9rem;
         }
     }
 }
@@ -126,19 +134,67 @@ table {
     border: 1px solid $orange;
     background-color: rgba(255, 166, 0, 0.1);
 }
-
+.col-1 {
+    background-color: deeppink;
+}
+.col-2 {
+    background-color: rgb(110, 20, 255);
+}
+.col-3 {
+    background-color: rgb(255, 153, 20);
+}
+.col-4 {
+    background-color: rgb(245, 118, 134);
+}
+.col-5 {
+    background-color: rgb(231, 255, 20);
+}
+.col-6 {
+    background-color: rgb(20, 255, 126);
+}
+.col-7 {
+    background-color: rgb(20, 169, 255);
+}
 @media (max-width: 900px) {
     .table-container {
         // width: 325px; /*待計算 */
         overflow-x: scroll;
         overflow-y: visible;
         padding: 0; /*待計算*/
+        // height: 656px;
+        // position: relative;
+        .carousel-btn {
+            height: 2.8rem;
+            width: 1.3rem;
+            background-color: #666;
+            opacity: 0.5;
+            position: absolute;
+            top: 53%;
+            z-index: 99;
+            @include flexContainers(row);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 900;
+        }
+        .carousel-btn-prev {
+            left: calc(25% + 5px);
+            .prev-btn::after {
+                font-weight: 900;
+                content: url('../img/prev-btn.svg');
+            }
+        }
+        .carousel-btn-next {
+            left: calc(100% - 30px);
+            .next-btn::after {
+                content: url('../img/next-btn.svg');
+            }
+        }
     }
     table {
-        // position: relative;
         table-layout: auto;
         width: 200%; /*待計算 */
-
         th,
         td {
             overflow: hidden;

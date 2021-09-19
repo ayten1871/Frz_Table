@@ -13,6 +13,14 @@
 </head>
 <body>
 <div class="table-container">
+    <!--prev &　next button-->
+    <div class="carousel-btn carousel-btn-prev">
+        <span class="prev-btn"></span>
+    </div>
+    <div class="carousel-btn carousel-btn-next">
+        <span class="next-btn"></span>
+    </div>
+    <!--main table-->
     <table>
         <!-- 第0行 -->
         <tr class="price-toggle-container">
@@ -32,7 +40,7 @@
             </th>
             <th>12/30(六)</th>
             <th>12/31(日)</th>
-            <th>
+            <th class="remove-padding">
                 <div class="contain-year-container">
                     <span class="contain-year">
                         <span class="year">
@@ -50,11 +58,11 @@
         <!-- 第二行 -->
         <tr>
             <th class="first-col">12/27(六)</th>
-            <td>--</td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td>           
+            <td class="col-1">--</td>
+            <td class="col-2"><span class="days-up">$15,568</span></td>
+            <td class="col-3"><span class="days-up">$15,568</span></td>
+            <td class="col-4"><span class="days-up">$15,568</span></td>
+            <td class="col-5">           
                 <div class="contain-cheapest-container">
                     <span class="contain-cheapest">
                         <span class="cheapest">
@@ -65,56 +73,56 @@
                     <span class="days-up">$15,568</span>
                 </div>
             </td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>
         <!-- 第三行 -->
         <tr>
             <th class="first-col">12/28(四)</th>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-1"><span class="days-up">$15,568</span></td>
+            <td class="col-2"><span class="days-up">$15,568</span></td>
+            <td class="col-3"><span class="days-up">$15,568</span></td>
+            <td class="col-4"><span class="days-up">$15,568</span></td>
+            <td class="col-5"><span class="days-up">$15,568</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>   
         <!-- 第四行 -->
         <tr>
             <th class="first-col">12/29(五)</th>
-            <td class="selected"><span class="search">查看</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="selected col-1"><span class="search">查看</span></td>
+            <td class="col-2"><span class="days-up">$15,568</span></td>
+            <td class="col-3"><span class="days-up">$15,568</span></td>
+            <td class="col-4"><span class="days-up">$15,568</span></td>
+            <td class="col-5"><span class="days-up">$15,568</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
             </tr>
         <!-- 第五行 -->
         <tr>
             <th class="first-col">12/30(五)</th>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-1"><span class="search">查看</span></td>
+            <td class="col-2"><span class="search">查看</span></td>
+            <td class="col-3"><span class="search">查看</span></td>
+            <td class="col-4"><span class="days-up">$15,568</span></td>
+            <td class="col-5"><span class="days-up">$15,568</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>
         <!-- 第六行 -->
         <tr>
             <th class="first-col">12/31(六)</th>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-1"><span class="search">查看</span></td>
+            <td class="col-2"><span class="search">查看</span></td>
+            <td class="col-3"><span class="search">查看</span></td>
+            <td class="col-4"><span class="search">查看</span></td>
+            <td class="col-5"><span class="days-up">$15,568</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>
         <!-- 第七行 -->
         <tr>
-            <th class="first-col">
+            <th class="first-col fix-padding">
                 <div class="contain-year-container">
                     <span class="contain-year">
                         <span class="year">
@@ -124,24 +132,24 @@
                     </span>
                 </div>
             </th>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-1"><span class="search">查看</span></td>
+            <td class="col-2"><span class="search">查看</span></td>
+            <td class="col-3"><span class="search">查看</span></td>
+            <td class="col-4"><span class="search">查看</span></td>
+            <td class="col-5"><span class="search">查看</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>
         <!-- 第八行 -->
         <tr>
             <th class="first-col">01/02(二)</th>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="search">查看</span></td>
-            <td><span class="days-up">$15,568</span></td>
-            <td><span class="days-up">$15,568</span></td>
+            <td class="col-1"><span class="search">查看</span></td>
+            <td class="col-2"><span class="search">查看</span></td>
+            <td class="col-3"><span class="search">查看</span></td>
+            <td class="col-4"><span class="search">查看</span></td>
+            <td class="col-5"><span class="search">查看</span></td>
+            <td class="col-6"><span class="days-up">$15,568</span></td>
+            <td class="col-7"><span class="days-up">$15,568</span></td>
         </tr>
     </table>
 </div>
