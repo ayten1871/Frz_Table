@@ -20,9 +20,33 @@
         }, options );
  
         // Greenify the collection based on the settings variable.
+        let percentage;
+        switch (settings.count.slide) {
+            case 1:
+                percentage = "400%";
+              break;
+            case 2:
+                percentage = "266%";
+            break;
+            case 3:
+                percentage = "200%";
+                break;
+            case 4:
+                percentage = "160%";
+            break;
+            case 5:
+                percentage = "133%";
+                break;
+            case 6:
+                percentage = "114%";
+                break;
+            case 7:
+                percentage = "100%";
+                break;
+        }
+        
         return this.css({
-            color: settings.count,
-            backgroundColor: settings.backgroundColor
+            width: percentage
         });
  
     };

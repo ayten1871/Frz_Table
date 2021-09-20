@@ -79,6 +79,23 @@ $(function () {
           if(parseInt($scrollLeft)===0){
               $(".carousel-btn-prev").hide();
           }
-        });
+    });
+    
+    //plugin
+    $(window).resize(function (e) {
+        //only works on mobile devices
+        if ($(window).width() <= 900) {
+            $(".search").greenify({
+                color:"orange"
+            })
 
+            $("table").FrzTable({count:{slide:3}});
+        }
+        if ($(window).width() > 900) {
+            $(".search").greenify({
+                color: "pink"
+            })
+            $("table").css("width", "200%");
+        }
+    })
   });
