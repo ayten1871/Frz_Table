@@ -3,6 +3,7 @@ $green: #24a07c;
 $red: rgb(225, 5, 0);
 $grey: rgb(218, 216, 216);
 $light: #eeecec;
+$lighter: rgba(218, 216, 216, 0.2);
 $orange: #ff7800;
 $black: #666;
 $dark: rgb(61, 59, 59);
@@ -11,6 +12,9 @@ $blue: rgb(0, 140, 255);
 @mixin flexContainers($direction) {
     display: flex;
     flex-direction: $direction;
+}
+body {
+    margin: 0;
 }
 
 ul {
@@ -25,8 +29,8 @@ table {
         width: 12.5%;
         text-align: center;
         height: auto;
-        border: 1px $grey solid;
-        // padding: 0.8rem 0.5rem;
+        outline: 1px $grey solid; //去除與橘三角間的間隙
+        flex-wrap: nowrap;
     }
     th {
         background-color: $light;
@@ -67,6 +71,7 @@ table {
     .contain-cheapest {
         @include flexContainers(column);
         align-items: flex-start;
+        white-space: nowrap;
         .cheapest-trangle {
             display: inline-block;
             width: 0;
@@ -91,6 +96,7 @@ table {
 }
 /*價格*/
 .days-up {
+    cursor: pointer;
     letter-spacing: 1px;
     word-spacing: 5px;
     font-weight: 900;
@@ -105,6 +111,7 @@ table {
 /*查看*/
 .search {
     color: $black;
+    cursor: pointer;
 }
 /*低價月曆*/
 .price-toggle-container {
@@ -130,46 +137,49 @@ table {
         content: '▲';
     }
 }
+.selected-siblings {
+    background-color: $lighter;
+}
 .selected {
-    border: 1px solid $orange;
+    outline: 1px solid $orange;
     background-color: rgba(255, 166, 0, 0.1);
 }
-.col-1 {
-    background-color: deeppink;
-}
-.col-2 {
-    background-color: rgb(110, 20, 255);
-}
-.col-3 {
-    background-color: rgb(255, 153, 20);
-}
-.col-4 {
-    background-color: rgb(245, 118, 134);
-}
-.col-5 {
-    background-color: rgb(231, 255, 20);
-}
-.col-6 {
-    background-color: rgb(20, 255, 126);
-}
-.col-7 {
-    background-color: rgb(20, 169, 255);
-}
+// .col-1 {
+// background-color: deeppink;
+// }
+// .col-2 {
+// background-color: rgb(110, 20, 255);
+// }
+// .col-3 {
+// background-color: rgb(255, 153, 20);
+// }
+// .col-4 {
+// background-color: rgb(245, 118, 134);
+// }
+// .col-5 {
+// background-color: rgb(231, 255, 20);
+// }
+// .col-6 {
+// background-color: rgb(20, 255, 126);
+// }
+// .col-7 {
+// background-color: rgb(20, 169, 255);
+// }
 @media (max-width: 900px) {
     .table-container {
+        //width: 300px; //
         // width: 325px; /*待計算 */
         overflow-x: scroll;
+        //overflow-y: hidden;
         overflow-y: visible;
         padding: 0; /*待計算*/
-        // height: 656px;
-        // position: relative;
         .carousel-btn {
             height: 2.8rem;
             width: 1.3rem;
             background-color: #666;
             opacity: 0.5;
             position: absolute;
-            top: 53%;
+            top: calc(50% - 2.8rem);
             z-index: 99;
             @include flexContainers(row);
             text-align: center;
@@ -177,16 +187,17 @@ table {
             align-items: center;
             color: white;
             font-weight: 900;
+            cursor: pointer;
         }
         .carousel-btn-prev {
-            left: calc(25% + 5px);
+            // left: calc(25% + 5px);
             .prev-btn::after {
                 font-weight: 900;
                 content: url('../img/prev-btn.svg');
             }
         }
         .carousel-btn-next {
-            left: calc(100% - 30px);
+            // left: calc(50% - 2.7rem);
             .next-btn::after {
                 content: url('../img/next-btn.svg');
             }
@@ -194,7 +205,7 @@ table {
     }
     table {
         table-layout: auto;
-        width: 200%; /*待計算 */
+        width: 133%; /*待計算 */
         th,
         td {
             overflow: hidden;

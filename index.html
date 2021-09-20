@@ -6,10 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FzTable模組練習</title>
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-		 	crossorigin="anonymous"></script>
-	<!-- 非同步下載，DOMContentLoaded 再執行js -->
-	<!-- <script async defer src="script.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 <div class="table-container">
@@ -59,66 +57,86 @@
         <tr>
             <th class="first-col">12/27(六)</th>
             <td class="col-1">--</td>
-            <td class="col-2"><span class="days-up">$15,568</span></td>
-            <td class="col-3"><span class="days-up">$15,568</span></td>
-            <td class="col-4"><span class="days-up">$15,568</span></td>
+            <td class="col-2"><a class="days-up">$15,568</a></td>
+            <td class="col-3"><a class="days-up">$15,568</a></td>
+            <td class="col-4"><a class="days-up">$15,568</a></td>
             <td class="col-5">           
                 <div class="contain-cheapest-container">
-                    <span class="contain-cheapest">
+                    <a class="contain-cheapest">
                         <span class="cheapest">
                             <div class="cheapest-trangle"></div>
                             <span>最便宜</span>
                         </span>
-                    </span>
-                    <span class="days-up">$15,568</span>
+                    </a>
+                    <a class="days-up">$15,568</a>
                 </div>
             </td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>
         <!-- 第三行 -->
         <tr>
             <th class="first-col">12/28(四)</th>
-            <td class="col-1"><span class="days-up">$15,568</span></td>
-            <td class="col-2"><span class="days-up">$15,568</span></td>
-            <td class="col-3"><span class="days-up">$15,568</span></td>
-            <td class="col-4"><span class="days-up">$15,568</span></td>
-            <td class="col-5"><span class="days-up">$15,568</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="days-up">$15,568</a></td>
+            <td class="col-2">
+                <div class="contain-cheapest-container">
+                    <a class="contain-cheapest">
+                        <span class="cheapest">
+                            <div class="cheapest-trangle"></div>
+                            <span>最便宜</span>
+                        </span>
+                    </a>
+                    <a class="days-up">$15,568</a>
+                </div>
+            </td>
+            <td class="col-3"><a class="days-up">$15,568</a></td>
+            <td class="col-4"><a class="days-up">$15,568</a></td>
+            <td class="col-5"><a class="days-up">$15,568</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>   
         <!-- 第四行 -->
         <tr>
             <th class="first-col">12/29(五)</th>
-            <td class="selected col-1"><span class="search">查看</span></td>
-            <td class="col-2"><span class="days-up">$15,568</span></td>
-            <td class="col-3"><span class="days-up">$15,568</span></td>
-            <td class="col-4"><span class="days-up">$15,568</span></td>
-            <td class="col-5"><span class="days-up">$15,568</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="search">查看</a></td>
+            <td class="col-2"><a class="days-up">$15,568</a></td>
+            <td class="col-3"><a class="days-up">$15,568</a></td>
+            <td class="col-4"><a class="days-up">$15,568</a></td>
+            <td class="col-5"><a class="days-up">$15,568</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
             </tr>
         <!-- 第五行 -->
         <tr>
             <th class="first-col">12/30(五)</th>
-            <td class="col-1"><span class="search">查看</span></td>
-            <td class="col-2"><span class="search">查看</span></td>
-            <td class="col-3"><span class="search">查看</span></td>
-            <td class="col-4"><span class="days-up">$15,568</span></td>
-            <td class="col-5"><span class="days-up">$15,568</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="search">查看</a></td>
+            <td class="col-2"><a class="search">查看</a></td>
+            <td class="col-3"><a class="search">查看</a></td>
+            <td class="col-4">
+                <div class="contain-cheapest-container">
+                    <a class="contain-cheapest">
+                        <span class="cheapest">
+                            <div class="cheapest-trangle"></div>
+                            <span>最便宜</span>
+                        </span>
+                    </a>
+                    <a class="days-up">$15,568</a>
+                </div>
+            </td>
+            <td class="col-5"><a class="days-up">$15,568</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>
         <!-- 第六行 -->
         <tr>
             <th class="first-col">12/31(六)</th>
-            <td class="col-1"><span class="search">查看</span></td>
-            <td class="col-2"><span class="search">查看</span></td>
-            <td class="col-3"><span class="search">查看</span></td>
-            <td class="col-4"><span class="search">查看</span></td>
-            <td class="col-5"><span class="days-up">$15,568</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="search">查看</a></td>
+            <td class="col-2"><a class="search">查看</a></td>
+            <td class="col-3"><a class="search">查看</a></td>
+            <td class="col-4"><a class="search">查看</a></td>
+            <td class="col-5"><a class="days-up">$15,568</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>
         <!-- 第七行 -->
         <tr>
@@ -132,29 +150,32 @@
                     </span>
                 </div>
             </th>
-            <td class="col-1"><span class="search">查看</span></td>
-            <td class="col-2"><span class="search">查看</span></td>
-            <td class="col-3"><span class="search">查看</span></td>
-            <td class="col-4"><span class="search">查看</span></td>
-            <td class="col-5"><span class="search">查看</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="search">查看</a></td>
+            <td class="col-2"><a class="search">查看</a></td>
+            <td class="col-3"><a class="search">查看</a></td>
+            <td class="col-4"><a class="search">查看</a></td>
+            <td class="col-5"><a class="search">查看</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>
         <!-- 第八行 -->
         <tr>
             <th class="first-col">01/02(二)</th>
-            <td class="col-1"><span class="search">查看</span></td>
-            <td class="col-2"><span class="search">查看</span></td>
-            <td class="col-3"><span class="search">查看</span></td>
-            <td class="col-4"><span class="search">查看</span></td>
-            <td class="col-5"><span class="search">查看</span></td>
-            <td class="col-6"><span class="days-up">$15,568</span></td>
-            <td class="col-7"><span class="days-up">$15,568</span></td>
+            <td class="col-1"><a class="search">查看</a></td>
+            <td class="col-2"><a class="search">查看</a></td>
+            <td class="col-3"><a class="search">查看</a></td>
+            <td class="col-4"><a class="search">查看</a></td>
+            <td class="col-5"><a class="search">查看</a></td>
+            <td class="col-6"><a class="days-up">$15,568</a></td>
+            <td class="col-7"><a class="days-up">$15,568</a></td>
         </tr>
     </table>
 </div>
 	  
-
+<!-- 非同步下載，DOMContentLoaded 再執行js -->
+<!-- <script async defer src="./script/jquery.FrzTable.js"></script> -->
+<script async defer src="./script/script.js"></script>
+<!-- <script async defer src="./script/FrzTable.js"></script> -->
 	
 </body>
 </html>
