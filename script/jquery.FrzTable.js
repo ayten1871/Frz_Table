@@ -14,14 +14,14 @@
             // 設定花多久時間移動完成
             speed: .3,
             // 每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
-            whenClick: function($element) {
-             console.log($element)
+            whenClick: function(para) {
+                console.log(para);
             }
         }, options);
 
         /**
         * ?M版時每次點擊往前往後移動幾格儲存格
-        */
+        
         let multiplication;
         switch (settings.count.slide) {
             case 1:
@@ -39,7 +39,8 @@
             default:
                 multiplication = 1;
                 break;
-        }        
+        }
+        */
         /**
          * ?M版時一個畫面show幾格儲存格 
          */
@@ -72,7 +73,7 @@
         }
         /**
          * ?設定花多久時間移動完成
-         */
+         
          let speed;
          switch (settings.speed) {
              case .1:
@@ -109,11 +110,10 @@
                 speed = 500;
                 break;
         }
+        */
         /**
-         * ?
+         * ?每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
          */
-        const pluginMethod = settings.whenClick;
-
         return this.each(function () {
     
             /**
@@ -137,6 +137,9 @@
                 /**
                  * TODO plugin method
                  */
+                 //pluginMethod();
+                 //console.log($(this));
+                 settings.whenClick($(this));
                  
              });
             
@@ -170,15 +173,15 @@
                let leftPos = $('.table-container').scrollLeft();
                // let col7 = $('.col-7').position().left;
                 let tdWidth = $(".col-1").width();
-                let pace = tdWidth * multiplication;
-                console.log(leftPos,tdWidth,multiplication,pace,speed);
-                $(".table-container").animate({scrollLeft: leftPos + tdWidth*multiplication},speed);
+                //let pace = tdWidth * multiplication;
+                console.log(leftPos,tdWidth,settings.count.slide,settings.speed*1000);
+                $(".table-container").animate({scrollLeft: leftPos + tdWidth*settings.count.slide},settings.speed*1000);
             })
             //move light when next btn clicked
             $(".carousel-btn-prev").off().click(function () {
                 let tdWidth = $(".col-1").width();
                 let leftPos = $('.table-container').scrollLeft();
-                $(".table-container").animate({scrollLeft: leftPos - tdWidth*multiplication}, speed);
+                $(".table-container").animate({scrollLeft: leftPos - tdWidth*settings.count.slide}, settings.speed*1000);
             })
             /**
              * *prev & next btns events
@@ -213,7 +216,13 @@
     
              $(this).css({
                 "width": percentage
-            });
+             });
+            /**
+             * ?每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
+             */
+            $(this).off().click(function () {
+                settings.whenClick($(this));
+            })
 
 
         })

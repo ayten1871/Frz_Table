@@ -95,7 +95,7 @@ $(function () {
     // })
      let isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
     if (isMobile) {
-        $("table").FrzTable({ count: { slide: 1, show: 4 },speed:.9 });
+        $("table").FrzTable({ count: { slide: 2, show: 4 },speed:.9 });
     }
 });
   
