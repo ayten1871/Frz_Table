@@ -87,6 +87,7 @@ table td {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 1rem;
 }
 
 .contain-cheapest-container .contain-cheapest {
@@ -101,6 +102,9 @@ table td {
       -ms-flex-align: start;
           align-items: flex-start;
   white-space: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .contain-cheapest-container .contain-cheapest .cheapest-trangle {
@@ -250,8 +254,6 @@ table td {
   }
   table {
     table-layout: auto;
-    width: 133%;
-    /*待計算 */
   }
   table th,
   table td {

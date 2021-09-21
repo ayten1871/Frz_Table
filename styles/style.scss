@@ -68,10 +68,12 @@ table {
     @include flexContainers(column);
     // align-items: flex-start;
     justify-content: space-between;
+    padding-bottom: 1rem;
     .contain-cheapest {
         @include flexContainers(column);
         align-items: flex-start;
         white-space: nowrap;
+        justify-content: center;
         .cheapest-trangle {
             display: inline-block;
             width: 0;
@@ -205,7 +207,7 @@ table {
     }
     table {
         table-layout: auto;
-        width: 133%; /*待計算 */
+        // width: 133%; /*待計算 */
         th,
         td {
             overflow: hidden;
