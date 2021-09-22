@@ -14,8 +14,9 @@
                 // 設定花多久時間移動完成
                 speed: 0.3,
                 // 每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
-                whenClick: function (para) {
-                    console.log(para);
+                whenClick: function (e) {
+                    let $elements = $(e.target).eq(0);
+                    console.log($elements);
                 },
             },
             options
@@ -166,8 +167,8 @@
              */
             $(this)
                 .off()
-                .click(function () {
-                    settings.whenClick($(this)[0]);
+                .click(function (e) {
+                    settings.whenClick(e);
                 });
         });
     };
