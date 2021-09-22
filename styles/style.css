@@ -225,7 +225,6 @@ table td {
     background-color: #666;
     opacity: 0.5;
     position: absolute;
-    top: calc(50% - 2.8rem);
     z-index: 99;
     display: -webkit-box;
     display: -ms-flexbox;

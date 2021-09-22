@@ -55,6 +55,7 @@
         /**
          * ?每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
          */
+
         return this.each(function () {
             /**
              * *click events--cross
@@ -67,7 +68,6 @@
                 $(this).addClass('selected');
                 //highligh horizational sibilngs
                 let tdCol = $(this).attr('class').split(' ').shift();
-                // console.log(tdCol);
                 if ($(`.${tdCol}`).siblings('td').hasClass('selected-siblings')) {
                     $(`.${tdCol}`).siblings('td').removeClass('selected-siblings');
                 }
@@ -79,15 +79,12 @@
             /**
              * *Mobile prev & next btn initial position
              */
-
-            let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
-            if (isMobile) {
-                let initialNextBtn = $(window).width() - 24;
-                $('.carousel-btn-next').css('left', `${initialNextBtn}px`);
-                let ratio = percentage.substring(0, percentage.length - 1); //get rid of %
-                let initialPrevBtn = ratio / 8;
-                $('.carousel-btn-prev').css('left', `${initialPrevBtn}%`);
-            }
+            let winHeight = $('.table-container').height() / 2;
+            let initialNextBtn = $(window).width() - 24;
+            $('.carousel-btn-next').css({ left: `${initialNextBtn}px`, top: winHeight });
+            let ratio = percentage.substring(0, percentage.length - 1); //get rid of %
+            let initialPrevBtn = ratio / 8;
+            $('.carousel-btn-prev').css({ left: `${initialPrevBtn}%`, top: winHeight });
 
             /**
              * *Mobile prev & next btn RWD position
@@ -95,7 +92,6 @@
             $(window).resize(() => {
                 let nextBtnLeft = $(window).width() - 24;
                 let prevBtnLeft = $('.first-col').width() + 19;
-                console.log(prevBtnLeft);
                 $('.carousel-btn-next').css('left', `${nextBtnLeft}px`);
                 $('.carousel-btn-prev').css('left', `${prevBtnLeft}px`);
             });
@@ -139,11 +135,11 @@
                 // show prev btn when prev col is available
                 $('.carousel-btn-prev').show();
                 //hide next btn when meet the last col
-                let $width = $('.table-container').outerWidth();
-                let $scrollWidth = $('.table-container')[0].scrollWidth;
-                let $scrollLeft = $('.table-container').scrollLeft();
 
-                if (parseInt($scrollWidth - $width) === parseInt($scrollLeft)) {
+                let width = $('.table-container').outerWidth();
+                let scrollWidth = $('.table-container')[0].scrollWidth;
+                let scrollLeft = $('.table-container').scrollLeft();
+                if (scrollWidth - width - 3 <= scrollLeft * settings.count.slide) {
                     $('.carousel-btn-next').hide();
                 }
             });
@@ -151,8 +147,9 @@
                 // show next btn when next col is available
                 $('.carousel-btn-next').show();
                 //hide prev btn when meet the last col
-                let $scrollLeft = Math.round($('.table-container').scrollLeft());
-                if (parseInt($scrollLeft) === 0) {
+                let scrollLeft = Math.round($('.table-container').scrollLeft());
+                let tdWidth = $('.col-1').width();
+                if (scrollLeft <= tdWidth * settings.count.slide) {
                     $('.carousel-btn-prev').hide();
                 }
             });
@@ -160,17 +157,17 @@
             /**
              *?M版時一個畫面show幾格儲存格
              */
-
             $(this).css({
                 width: percentage,
             });
+
             /**
              * ?每次點擊儲存格時會執行此callback，並帶入所點擊的儲存格jquery物件
              */
             $(this)
                 .off()
                 .click(function () {
-                    settings.whenClick($(this));
+                    settings.whenClick($(this)[0]);
                 });
         });
     };

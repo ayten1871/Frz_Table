@@ -1,11 +1,11 @@
-$(function () {
+$(document).ready(function () {
     //default
     $('table').FrzTable({ count: { show: 7 } });
 
     //detect mobile devices
     let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
     if (isMobile) {
-        $('table').FrzTable({ count: { slide: 2, show: 3 }, speed: 0.9 });
+        $('table').FrzTable({ count: { slide: 2, show: 4 }, speed: 0.9 });
     }
     //rwd desktop to mobiles
     $(window).resize(() => {
