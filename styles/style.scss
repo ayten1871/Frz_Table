@@ -13,6 +13,7 @@ $blue: rgb(0, 140, 255);
     display: flex;
     flex-direction: $direction;
 }
+
 body {
     margin: 0;
 }
@@ -149,8 +150,8 @@ table {
 
 @media (max-width: 900px) {
     .table-container {
-        overflow-x: scroll;
-        overflow-y: visible;
+        overflow: hidden;
+        // overflow-y: visible;
         padding: 0; /*待計算*/
         .carousel-btn {
             height: 2.8rem;

@@ -214,8 +214,7 @@ table td {
 
 @media (max-width: 900px) {
   .table-container {
-    overflow-x: scroll;
-    overflow-y: visible;
+    overflow: hidden;
     padding: 0;
     /*待計算*/
   }
